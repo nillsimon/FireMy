@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "590656901808",
+    "firebase_url": "https://firemy-a2519.firebaseio.com",
+    "project_id": "firemy-a2519",
+    "storage_bucket": "firemy-a2519.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590656901808:android:ee222feec85dd576bd2175",
+        "android_client_info": {
+          "package_name": "com.nillsimon.firemy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590656901808-78r6pi53ik6v6v33kccfmtgg8pq14thn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nillsimon.firemy",
+            "certificate_hash": "cffbb5873faeaa187e28d611bb14268a8a3c1bb6"
+          }
+        },
+        {
+          "client_id": "590656901808-eiuv42jci9qo0qmbvlf66sphj8c3gm5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFvjsrheowmL4EK1e7U-Zo9Ya-N7rjxrY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590656901808-eiuv42jci9qo0qmbvlf66sphj8c3gm5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
