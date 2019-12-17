@@ -34,71 +34,15 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
 
-    private TextView textView;
-    private Button btnAdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.textView);
-        btnAdd = findViewById(R.id.btnAdd);
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addUser();
-            }
-        });
-
-
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("users");
 
-        reference.addChildEventListener(new ChildEventListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                textView.setText("");
-                textView.setText("Added:" + dataSnapshot.getValue());
-
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                textView.setText("");
-                textView.setText("Changed:" + dataSnapshot.getValue());
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                textView.setText("");
-                textView.setText("Removed:" + dataSnapshot.getValue());
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
-    private void addUser(){
-        String id = reference.push().getKey();
-        User newUser = new User("Tim", "kok",17);
-        Map<String, Object> userValues = newUser.toMap() ;
-        Map<String, Object> user = new HashMap<>();
-        user.put(id, userValues);
-        reference.updateChildren(user);
-    }
-        /*
         result = new ArrayList<>();
 
         recyclerView = findViewById(R.id.userList);
@@ -107,26 +51,29 @@ public class MainActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(llm);
+
         adapter = new UserAdapter(result);
         recyclerView.setAdapter(adapter);
 
         updateList();
-    */
 
-
+    }
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case 0:
                 break;
             case 1:
                 break;
         }
+
         return super.onContextItemSelected(item);
     }
 
-    private void updateList(){
+
+
+    public void updateList() {
         reference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -137,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 UserModel model = dataSnapshot.getValue(UserModel.class);
-
                 int index = getItemIndex(model);
-
                 result.set(index, model);
                 adapter.notifyItemChanged(index);
             }
@@ -147,9 +92,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
                 UserModel model = dataSnapshot.getValue(UserModel.class);
-
                 int index = getItemIndex(model);
-
                 result.remove(index);
                 adapter.notifyItemRemoved(index);
             }
@@ -166,15 +109,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
-    private int getItemIndex(UserModel user){
-        int index = - 1;
-        for (int i = 0; i <result.size() ; i++) {
-            if(result.get(i).key.equals(user.key))
-                index = i;
-            break;
+    private int getItemIndex(UserModel user) {
+        int index = -1;
+        for (int i = 0; i < result.size(); i++) {
+            if (result.get(i).key.equals(user.key)) {
+                index = 1;
+                break;
+            }
         }
-        return index;
+            return index;
     }
 }
-
