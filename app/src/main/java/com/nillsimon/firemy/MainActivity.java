@@ -12,6 +12,7 @@ import android.telecom.TelecomManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private UserAdapter adapter;
     private FirebaseDatabase database;
     private DatabaseReference reference;
+    private ProgressBar progressBar;
 
 
     @Override
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        progressBar = findViewById(R.id.progressBar);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("users");
 
@@ -56,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
         updateList();
+        changeProgress();
 
     }
 
@@ -63,8 +67,10 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case 0:
+                removeUser(item.getItemId());
                 break;
             case 1:
+                changeUser(item.getItemId());
                 break;
         }
 
@@ -79,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 result.add(dataSnapshot.getValue(UserModel.class));
                 adapter.notifyDataSetChanged();
+                changeProgress();
             }
 
             @Override
@@ -95,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 int index = getItemIndex(model);
                 result.remove(index);
                 adapter.notifyItemRemoved(index);
+                changeProgress();
             }
 
             @Override
@@ -118,5 +126,31 @@ public class MainActivity extends AppCompatActivity {
             }
         }
             return index;
+    }
+
+    private void removeUser(int position){
+        reference.child(result.get(position).key).removeValue();
+    }
+    private void changeUser(int position){
+        UserModel user = result.get(position);
+        user.age = 200;
+
+        Map<String, Object> userValues = user.toMap();
+        Map<String, Object> newUser = new HashMap<>();
+
+        newUser.put(user.key, userValues);
+
+        reference.updateChildren(newUser);
+
+    }
+    private void changeProgress(){
+        if(result.size() == 0){
+            recyclerView.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
+
+        }else {
+            recyclerView.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
+        }
     }
 }

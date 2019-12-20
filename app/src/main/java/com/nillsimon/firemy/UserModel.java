@@ -1,12 +1,19 @@
 package com.nillsimon.firemy;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class UserModel implements Serializable {
-    String firstName, lastName, job, key;
+    String image, firstName, lastName, descFirst, job, key;
     int age;
 
-    public UserModel() {
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getFirstName() {
@@ -23,6 +30,14 @@ public class UserModel implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getDescFirst() {
+        return descFirst;
+    }
+
+    public void setDescFirst(String descFirst) {
+        this.descFirst = descFirst;
     }
 
     public String getJob() {
@@ -49,11 +64,16 @@ public class UserModel implements Serializable {
         this.age = age;
     }
 
-    public UserModel(String firstName, String lastName, String job, int age, String key) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.job = job;
-        this.age = age;
-        this.key = key;
+    public Map<String , Object> toMap(){
+        HashMap<String ,Object> result = new HashMap<>();
+        result.put("image", image);
+        result.put("firstName", firstName);
+        result.put("lastName", lastName);
+        result.put("descFirst", descFirst);
+        result.put("job", job);
+        result.put("age", age);
+        result.put("key", key);
+
+        return result;
     }
 }

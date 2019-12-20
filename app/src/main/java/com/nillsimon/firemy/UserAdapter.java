@@ -4,10 +4,13 @@ import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -33,6 +36,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.text_name.setText(user.firstName + " " + user.lastName);
         holder.age.setText(user.age + "");
         holder.text_job.setText(user.job);
+        holder.descFirst.setText(user.descFirst);
+        Picasso.get().load(list.get(position).getImage()).into((holder.image));
 
         holder.itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
@@ -50,13 +55,17 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     class UserViewHolder extends RecyclerView.ViewHolder{
 
-        TextView text_name, text_job, age;
+        TextView  text_name, text_job,descFirst, age, key;
+        ImageView image;
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            text_name = itemView.findViewById(R.id.text_name);
-            text_job = itemView.findViewById(R.id.text_job);
-            age = itemView.findViewById(R.id.age);
+            image = itemView.findViewById(R.id.imageFirst);
+            text_name = itemView.findViewById(R.id.asanaRu);
+            text_job = itemView.findViewById(R.id.asanaEn);
+            descFirst = itemView.findViewById(R.id.descFirst);
+            key = itemView.findViewById(R.id.descTwo);
+            age = itemView.findViewById(R.id.publish);
         }
     }
 }
