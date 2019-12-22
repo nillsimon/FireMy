@@ -8,17 +8,17 @@ public class User {
     String image;
     String text_name;
     String text_job;
-    String descFirst;
+    String descText;
     int age;
 
     public User() {
     }
 
-    public User(String image, String text_name, String text_job, String descFirst, int age) {
+    public User(String image, String text_name, String text_job, String descText, int age) {
         this.image = image;
         this.text_name = text_name;
         this.text_job = text_job;
-        this.descFirst = descFirst;
+        this.descText = descText;
         this.age = age;
     }
 
@@ -28,7 +28,7 @@ public class User {
         HashMap<String , Object> result = new HashMap<>();
         result.put("image", image);
         result.put("text_name", text_name);
-        result.put("descFirst", descFirst);
+        result.put("descText", descText);
         result.put("text_job", text_job);
         result.put("age", age);
         return result;

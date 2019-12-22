@@ -36,7 +36,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.text_name.setText(user.firstName + " " + user.lastName);
         holder.age.setText(user.age + "");
         holder.text_job.setText(user.job);
-        holder.descFirst.setText(user.descFirst);
+        holder.descText.setText(user.descText);
         Picasso.get().load(list.get(position).getImage()).into((holder.image));
 
         holder.itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
@@ -55,7 +55,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     class UserViewHolder extends RecyclerView.ViewHolder{
 
-        TextView  text_name, text_job,descFirst, age, key;
+        TextView  text_name, text_job, descText, age, key;
         ImageView image;
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -63,8 +63,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             image = itemView.findViewById(R.id.image);
             text_name = itemView.findViewById(R.id.asanaRu);
             text_job = itemView.findViewById(R.id.asanaEn);
-            descFirst = itemView.findViewById(R.id.descFirst);
-            key = itemView.findViewById(R.id.descTwo);
+            descText = itemView.findViewById(R.id.descTwo);
             age = itemView.findViewById(R.id.publish);
         }
     }
