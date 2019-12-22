@@ -76,9 +76,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onContextItemSelected(item);
     }
-
-
-
     public void updateList() {
         reference.addChildEventListener(new ChildEventListener() {
             @Override

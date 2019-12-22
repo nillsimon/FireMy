@@ -21,21 +21,14 @@ public class User {
         this.descFirst = descFirst;
         this.age = age;
     }
-    /*
-    @Override
-    public String toString() {
-        return "User{" +
-                "text_name='" + text_name + '\'' +
-                ", age=" + age +
-                '}';
-    }
 
- */
+
 
     public Map<String, Object> toMap(){
         HashMap<String , Object> result = new HashMap<>();
         result.put("image", image);
         result.put("text_name", text_name);
+        result.put("descFirst", descFirst);
         result.put("text_job", text_job);
         result.put("age", age);
         return result;

@@ -60,7 +60,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.imageFirst);
+            image = itemView.findViewById(R.id.image);
             text_name = itemView.findViewById(R.id.asanaRu);
             text_job = itemView.findViewById(R.id.asanaEn);
             descFirst = itemView.findViewById(R.id.descFirst);
