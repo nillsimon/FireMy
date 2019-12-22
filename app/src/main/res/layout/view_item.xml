@@ -212,9 +212,8 @@
                     android:text="19"
                     android:textColor="#606060" />
             </FrameLayout>
-
             <FrameLayout
-                android:id="@+id/layoutDate2"
+                android:id="@+id/social"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/descTwo"
@@ -226,18 +225,57 @@
                 android:padding="5dp">
 
                 <ImageView
-                    android:layout_width="14dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     android:src="@drawable/ic_chat_bubble_outline_black_24dp" />
 
                 <TextView
-                    android:id="@+id/publishedAt2"
+                    android:id="@+id/socialAll"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
                     android:layout_marginRight="10dp"
+                    android:text="19"
+                    android:textColor="#606060" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/descTwo"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="310dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_white"
+                android:padding="5dp">
+
+
+                <TextView
+                    android:id="@+id/counterFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="10dp"
+                    android:text="15"
+                    android:textColor="#606060" />
+
+                <TextView
+                    android:id="@+id/lane"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="21dp"
+                    android:text="/"
+                    android:textColor="@color/colorAccent" />
+                <TextView
+                    android:id="@+id/counterTwo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:text="19"
                     android:textColor="#606060" />
             </FrameLayout>
