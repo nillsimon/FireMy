@@ -5,8 +5,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserModel implements Serializable {
-    String image, firstName, lastName, descFirst, job, key;
+    String image, firstName, lastName, DescFirst, descText, job, key;
     int age;
+
+    public String getDescFirst() {
+        return DescFirst;
+    }
+
+    public void setDescFirst(String descFirst) {
+        this.DescFirst = descFirst;
+    }
 
     public String getImage() {
         return image;
@@ -32,12 +40,12 @@ public class UserModel implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getDescFirst() {
-        return descFirst;
+    public String getDescText() {
+        return descText;
     }
 
-    public void setDescFirst(String descFirst) {
-        this.descFirst = descFirst;
+    public void setDescText(String descText) {
+        this.descText = descText;
     }
 
     public String getJob() {
@@ -69,7 +77,8 @@ public class UserModel implements Serializable {
         result.put("image", image);
         result.put("firstName", firstName);
         result.put("lastName", lastName);
-        result.put("descFirst", descFirst);
+        result.put("DescFirst", DescFirst);
+        result.put("descText", descText);
         result.put("job", job);
         result.put("age", age);
         result.put("key", key);
