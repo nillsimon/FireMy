@@ -3,17 +3,22 @@ package com.nillsimon.firemy;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telecom.TelecomManager;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -150,4 +155,32 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.INVISIBLE);
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Toast toast = Toast.makeText(this, "Изменить настройки ", Toast.LENGTH_LONG);
+                toast.show();
+                break;
+            case R.id.reviews:
+                Toast toast1 = Toast.makeText(this, "Посмотреть отзывы", Toast.LENGTH_LONG);
+                toast1.show();
+                break;
+            case R.id.favorite:
+                Toast toast2 = Toast.makeText(this, "Добавить в избранное", Toast.LENGTH_LONG);
+                toast2.show();
+                break;
+            default:
+        }
+                return super.onOptionsItemSelected(item);
+
+        }
 }

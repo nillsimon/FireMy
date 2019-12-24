@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">FireMy</string>
+    <string name="settings">Настройки</string>
+    <string name="favorite">Избранное</string>
+    <string name="reviews">Отзывы</string>
 
 </resources>

@@ -4,8 +4,10 @@ import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,8 +16,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> implements View.OnClickListener {
 
+    public Button addedAsana;
     private List<UserModel> list;
 
     public UserAdapter(List<UserModel> list) {
@@ -55,10 +58,16 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return list.size();
     }
 
+    @Override
+    public void onClick(View v) {
+        addedAsana.setOnClickListener(this);
+    }
+
     class UserViewHolder extends RecyclerView.ViewHolder{
 
         TextView  text_name, text_job, descText, DescFirst, age, key;
         ImageView image, yogaIconGrand;
+
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
 
