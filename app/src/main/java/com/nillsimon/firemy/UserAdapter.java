@@ -4,10 +4,8 @@ import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,12 +26,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @NonNull
     @Override
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new UserViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item, parent, false));
+        return new UserViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.list_ltem, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull final UserViewHolder holder, int position) {
 
+        //((ListAdapter.ListViewHolder)holder).bindView(position);
         UserModel user = list.get(position);
 
         holder.nameFirst.setText(user.nameFirst);
@@ -43,9 +42,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         holder.descFirst.setText(user.descFirst);
         holder.descTwo.setText(user.descTwo);
         Picasso.get().load(list.get(position).getImageFirst()).into((holder.imageFirst));
-
-
         holder.itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
+
+
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
             }

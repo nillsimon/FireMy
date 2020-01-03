@@ -9,11 +9,11 @@
     tools:context=".AuthActivity">
 
     <TextView
-        android:text="Driver Sign In"
+        android:text="@string/auth"
         android:textAllCaps="true"
         android:gravity="center_horizontal"
         android:layout_marginBottom="20dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorBackground"
         android:background="@color/colorPrimary"
         android:textSize="30sp"
         android:layout_width="match_parent"
@@ -81,10 +81,10 @@
 
     <Button
         android:id="@+id/loginSignUpButton"
-        android:text="Sign Up"
+        android:text="@string/sign_out"
         android:onClick="loginSignUpUser"
         android:background="@color/colorAccent"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorBackground"
         android:textSize="20sp"
         android:layout_marginTop="150dp"
         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
 
     <TextView
         android:id="@+id/toggleLoginSignUpTextView"
-        android:text="Tap To Log In"
+        android:text="@string/sign_up"
         android:onClick="toggleLoginSignUp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"

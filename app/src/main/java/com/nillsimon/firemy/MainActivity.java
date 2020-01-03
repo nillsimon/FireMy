@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -36,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference reference;
     private ProgressBar progressBar;
-    private Button addFragment;
 
 
     @Override
@@ -46,42 +43,45 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        initFragment();
+        //updateList();
+       // changeProgress();
+
+    }
+
+    private void authFragment() {
+        AuthFragment fragment = new AuthFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
+    }
+
+    private void setFields() {
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference("users");
+        addUser();
+        result = new ArrayList<>();
+        recyclerView = findViewById(R.id.listRecyclerView);
+        recyclerView.setHasFixedSize(false);
+       // LinearLayoutManager llm = new LinearLayoutManager(this);
+       // llm.setOrientation(LinearLayoutManager.VERTICAL);
+       // recyclerView.setLayoutManager(llm);
+        adapter = new UserAdapter(result);
+        recyclerView.setAdapter(adapter);
+    }
+
+    private void initFragment() {
+        ListFragment fragment = new ListFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.placeholder, fragment);
+        fragmentTransaction.commit();
+
+    }
 
 
-
-
-            addFragment = findViewById(R.id.addFragment);
-            progressBar = findViewById(R.id.progressBar);
-            database = FirebaseDatabase.getInstance();
-            reference = database.getReference("users");
-            addUser();
-            result = new ArrayList<>();
-
-            recyclerView = findViewById(R.id.userList);
-            recyclerView.setHasFixedSize(true);
-            LinearLayoutManager llm = new LinearLayoutManager(this);
-            llm.setOrientation(LinearLayoutManager.VERTICAL);
-
-            recyclerView.setLayoutManager(llm);
-
-            adapter = new UserAdapter(result);
-            recyclerView.setAdapter(adapter);
-
-            updateList();
-            changeProgress();
-
-            addFragment.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    initFragment();
-                }
-            });
-
-        }
-
-
-
-        public void updateList () {
+    public void updateList () {
             reference.addChildEventListener(new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
@@ -172,17 +172,21 @@ public class MainActivity extends AppCompatActivity {
         public boolean onOptionsItemSelected (MenuItem item){
             switch (item.getItemId()) {
                 case R.id.settings:
-
-                    Toast toast = Toast.makeText(this, "Изменить настройки ", Toast.LENGTH_LONG);
+                    startActivity(new Intent(MainActivity.this,
+                            AuthActivity.class));
+                    Toast toast = Toast.makeText(this, "Изменить настройки Запущен AuthАктивити через интент", Toast.LENGTH_LONG);
                     toast.show();
                     break;
                 case R.id.auth:
-                    startActivity(new Intent(MainActivity.this, AuthActivity.class));
-                    Toast toast1 = Toast.makeText(this, "Пройти регистрацию", Toast.LENGTH_LONG);
+                   authFragment();
+                   // startActivity(new Intent(MainActivity.this, AuthActivity.class));
+                    Toast toast1 = Toast.makeText(this, "Пройти регистрацию", Toast.LENGTH_SHORT);
                     toast1.show();
                     break;
                 case R.id.favorite:
-                    Toast toast2 = Toast.makeText(this, "Добавить в избранное", Toast.LENGTH_LONG);
+                    startActivity(new Intent(MainActivity.this,
+                            AuthFragment.class));
+                    Toast toast2 = Toast.makeText(this, "Добавить в избранное Запущен AuthFragment через интент", Toast.LENGTH_LONG);
                     toast2.show();
                     break;
                 case R.id.add:
@@ -202,11 +206,4 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-    private void initFragment() {
-        FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.fr_place, new ButtonFragment());
-        ft.commit();
-
-    }
 }

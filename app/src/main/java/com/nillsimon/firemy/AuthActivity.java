@@ -41,7 +41,6 @@ public class AuthActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-
             startActivity(new Intent(AuthActivity.this,
                     MainActivity.class));
         }
@@ -50,7 +49,7 @@ public class AuthActivity extends AppCompatActivity {
 
 
 
-                textInputEmail = findViewById(R.id.textInputEmail);
+        textInputEmail = findViewById(R.id.textInputEmail);
         textInputName = findViewById(R.id.textInputName);
         textInputPassword = findViewById(R.id.textInputPassword);
         textInputConfirmPassword = findViewById(R.id.textInputConfirmPassword);

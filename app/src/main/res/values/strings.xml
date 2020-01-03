@@ -9,5 +9,20 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="auth">Регистрация</string>
     <string name="fragment">Fragment</string>
+    <string name="i_m_a_driver">Для Водтителей</string>
+    <string name="i_m_a_customer">Для Заказчиков</string>
+    <string name="todo">TODO</string>
+    <string name="address">Адрес</string>
+    <string name="name">Имя</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Повтор пароля</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="tap_to_log_in">Tap To Log In</string>
+    <string name="title_activity_driver_maps">Map</string>
+    <string name="sign_out">Выход</string>
+    <string name="title_activity_passenger_maps">Map</string>
+    <string name="bookTaxi">Заказать такси</string>
+    <string name="title_activity_customer_maps">Map</string>
+    <string name="anotherAddress">Ввести другой адрес</string>
 
 </resources>
