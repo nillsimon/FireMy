@@ -17,11 +17,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/userList"
         android:layout_width="match_parent"
-        android:layout_height="500dp"/>
-    <Button
-        android:id="@+id/addFragment"
-        android:text="@string/fragment"
-        android:layout_below="@+id/userList"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 </RelativeLayout>
+
+

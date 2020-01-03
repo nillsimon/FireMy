@@ -5,34 +5,35 @@ import java.util.Map;
 
 public class User {
 
-    String image;
-    String text_name;
-    String text_job;
-    String descText;
-    String DescFirst;
+    String imageFirst;
+    String nameFirst;
+    String nameTwo;
+    String hotText;
+    String descFirst;
+    String descTwo;
     int age;
 
     public User() {
     }
 
-    public User(String image, String text_name, String text_job, String DescFirst, String descText, int age) {
-        this.image = image;
-        this.text_name = text_name;
-        this.text_job = text_job;
-        this.DescFirst = DescFirst;
-        this.descText = descText;
+    public User(String imageFirst, String nameFirst, String nameTwo, String  hotText, String descFirst, String descTwo, int age) {
+        this.imageFirst = imageFirst;
+        this.nameFirst = nameFirst;
+        this.nameTwo = nameTwo;
+        this.hotText = hotText;
+        this.descFirst = descFirst;
+        this.descTwo = descTwo;
         this.age = age;
     }
 
-
-
     public Map<String, Object> toMap(){
         HashMap<String , Object> result = new HashMap<>();
-        result.put("image", image);
-        result.put("text_name", text_name);
-        result.put("DescFirst", DescFirst);
-        result.put("descText", descText);
-        result.put("text_job", text_job);
+        result.put("imageFirst", imageFirst);
+        result.put("nameFirst", nameFirst);
+        result.put("nameTwo", nameTwo);
+        result.put("hotText", hotText);
+        result.put("descFirst", descFirst);
+        result.put("descTwo", descTwo);
         result.put("age", age);
         return result;
     }

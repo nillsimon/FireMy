@@ -16,9 +16,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> implements View.OnClickListener {
+public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>  {
 
-    public Button addedAsana;
+
     private List<UserModel> list;
 
     public UserAdapter(List<UserModel> list) {
@@ -36,19 +36,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
         UserModel user = list.get(position);
 
-        holder.text_name.setText(user.firstName + " " + user.lastName);
+        holder.nameFirst.setText(user.nameFirst);
+        holder.nameTwo.setText(user.nameTwo);
         holder.age.setText(user.age + "");
-        holder.text_job.setText(user.job);
-        holder.descText.setText(user.descText);
-        holder.DescFirst.setText(user.DescFirst);
-        Picasso.get().load(list.get(position).getImage()).into((holder.image));
-        Picasso.get().load(list.get(position).getImage()).into((holder.yogaIconGrand));
+        holder.hotText.setText(user.hotText);
+        holder.descFirst.setText(user.descFirst);
+        holder.descTwo.setText(user.descTwo);
+        Picasso.get().load(list.get(position).getImageFirst()).into((holder.imageFirst));
+
 
         holder.itemView.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
             @Override
             public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-                menu.add(holder.getAdapterPosition(),0, 0, " Удалить");
-                menu.add(holder.getAdapterPosition(),1, 0, " Изменить");
             }
         });
     }
@@ -58,26 +57,24 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         return list.size();
     }
 
-    @Override
-    public void onClick(View v) {
-        addedAsana.setOnClickListener(this);
-    }
 
     class UserViewHolder extends RecyclerView.ViewHolder{
 
-        TextView  text_name, text_job, descText, DescFirst, age, key;
-        ImageView image, yogaIconGrand;
+        TextView  nameFirst, nameTwo, hotText, descFirst, descTwo, age, key;
+        ImageView imageFirst;
 
         public UserViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.image);
-            yogaIconGrand = itemView.findViewById(R.id.yogaIconGrand);
-            text_name = itemView.findViewById(R.id.asanaRu);
-            text_job = itemView.findViewById(R.id.asanaEn);
-            DescFirst = itemView.findViewById(R.id.DescFirst);
-            descText = itemView.findViewById(R.id.descTwo);
+            imageFirst = itemView.findViewById(R.id.imageFirst);
+            nameFirst = itemView.findViewById(R.id.nameFirst);
+            nameTwo = itemView.findViewById(R.id.nameTwo);
+            hotText = itemView.findViewById(R.id.hotText);
+            descFirst = itemView.findViewById(R.id.descFirst);
+            descTwo = itemView.findViewById(R.id.descTwo);
             age = itemView.findViewById(R.id.publish);
         }
     }
+
+
 }

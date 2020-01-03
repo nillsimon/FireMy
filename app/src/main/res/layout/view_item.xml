@@ -42,32 +42,32 @@
   -->
 
             <TextView
-                android:id="@+id/asanaRu"
+                android:id="@+id/nameFirst"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="46dp"
                 android:fontFamily="sans-serif-light"
-                android:text="AsanaRu"
+                android:text="NameFirst"
                 android:textColor="@color/colorTextTitle"
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/asanaEn"
+                android:id="@+id/nameTwo"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_below="@+id/asanaRu"
+                android:layout_below="@+id/nameFirst"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
-                android:text="AsanaEn" />
+                android:text="nameTwo" />
             <TextView
-                android:id="@+id/hotAsana"
+                android:id="@+id/hotText"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-                android:layout_below="@+id/asanaRu"
+                android:layout_below="@+id/nameFirst"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="30dp"
                 android:text="Разогревающие асаны" />
@@ -102,7 +102,7 @@
                 android:id="@+id/yogaIcon1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/asanaRu"
+                android:layout_below="@+id/nameFirst"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="30dp"
                 android:layout_marginRight="70dp"
@@ -114,7 +114,7 @@
                 android:id="@+id/yogaIcon2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/asanaRu"
+                android:layout_below="@+id/nameFirst"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="30dp"
@@ -140,10 +140,10 @@
 
 
             <ImageView
-                android:id="@+id/image"
+                android:id="@+id/imageFirst"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_below="@+id/asanaEn"
+                android:layout_below="@+id/nameTwo"
                 android:layout_marginTop="60dp"
                 android:scaleType="center"
                 android:transitionName="img"
@@ -295,10 +295,10 @@
                 android:textStyle="bold" /-->
 
             <TextView
-                android:id="@+id/DescFirst"
+                android:id="@+id/descFirst"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_below="@+id/image"
+                android:layout_below="@+id/imageFirst"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:text="DescFirst"
@@ -310,11 +310,11 @@
                 android:id="@+id/descTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/DescFirst"
+                android:layout_below="@+id/descFirst"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
-                android:text="descTwo" />
+                android:text="DescTwo" />
 
             <ImageView
                 android:id="@+id/buttonSettings"

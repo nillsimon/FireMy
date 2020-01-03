@@ -5,55 +5,55 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class UserModel implements Serializable {
-    String image, firstName, lastName, DescFirst, descText, job, key;
+    String imageFirst, nameFirst, nameTwo, hotText, descFirst, descTwo, key;
     int age;
 
+    public String getImageFirst() {
+        return imageFirst;
+    }
+
+    public void setImageFirst(String imageFirst) {
+        this.imageFirst = imageFirst;
+    }
+
+    public String getNameFirst() {
+        return nameFirst;
+    }
+
+    public void setNameFirst(String nameFirst) {
+        this.nameFirst = nameFirst;
+    }
+
+    public String getNameTwo() {
+        return nameTwo;
+    }
+
+    public void setNameTwo(String nameTwo) {
+        this.nameTwo = nameTwo;
+    }
+
+    public String getHotText() {
+        return hotText;
+    }
+
+    public void setHotText(String hotText) {
+        this.hotText = hotText;
+    }
+
     public String getDescFirst() {
-        return DescFirst;
+        return descFirst;
     }
 
     public void setDescFirst(String descFirst) {
-        this.DescFirst = descFirst;
+        this.descFirst = descFirst;
     }
 
-    public String getImage() {
-        return image;
+    public String getDescTwo() {
+        return descTwo;
     }
 
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getDescText() {
-        return descText;
-    }
-
-    public void setDescText(String descText) {
-        this.descText = descText;
-    }
-
-    public String getJob() {
-        return job;
-    }
-
-    public void setJob(String job) {
-        this.job = job;
+    public void setDescTwo(String descTwo) {
+        this.descTwo = descTwo;
     }
 
     public String getKey() {
@@ -74,12 +74,12 @@ public class UserModel implements Serializable {
 
     public Map<String , Object> toMap(){
         HashMap<String ,Object> result = new HashMap<>();
-        result.put("image", image);
-        result.put("firstName", firstName);
-        result.put("lastName", lastName);
-        result.put("DescFirst", DescFirst);
-        result.put("descText", descText);
-        result.put("job", job);
+        result.put("imageFirst", imageFirst);
+        result.put("nameFirst", nameFirst);
+        result.put("nameTwo", nameTwo);
+        result.put("hotText", hotText);
+        result.put("descFirst", descFirst);
+        result.put("descTwo", descTwo);
         result.put("age", age);
         result.put("key", key);
 

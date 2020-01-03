@@ -13,9 +13,20 @@
         android:title="@string/favorite"
         app:showAsAction="never" />
     <item
-        android:id="@+id/reviews"
+        android:id="@+id/auth"
         android:orderInCategory="100"
-        android:title="@string/reviews"
+        android:title="@string/auth"
+        app:showAsAction="never" />
+
+  <item
+        android:id="@+id/add"
+        android:orderInCategory="100"
+        android:title="@string/add"
+        app:showAsAction="never" />
+<item
+        android:id="@+id/fragmentMenu"
+        android:orderInCategory="100"
+        android:title="@string/fragment"
         app:showAsAction="never" />
 
 </menu>
