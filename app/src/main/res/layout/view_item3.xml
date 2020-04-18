@@ -28,8 +28,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:src="@mipmap/trikonasana" />
-
+                android:src="@mipmap/trikonasana"
+                />
             <TextView
                 android:id="@+id/asanaRu"
                 android:layout_width="match_parent"
@@ -47,10 +47,10 @@
                 android:id="@+id/asanaEn"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/asanaRu"
                 android:layout_marginLeft="100dp"
-                android:layout_marginTop="35dp"
                 android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
                 android:text="AsanaEn" />
 
             <ImageView
@@ -68,13 +68,29 @@
                 android:id="@+id/yogaIcon2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/asanaRu"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="59dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginBottom="15dp"
                 android:src="@mipmap/gomukxasana" />
+
+
+
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTwo"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="150dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/round_white"
+                android:padding="5dp">
+
+            </FrameLayout>
 
 
             <ImageView
@@ -93,44 +109,59 @@
                 android:id="@+id/layoutDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/asanaRu"
-                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/nameTwo"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="381dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="19dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/round_white"
                 android:padding="5dp">
 
                 <TextView
                     android:id="@+id/addedAsana"
                     android:layout_width="wrap_content"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
                     android:layout_marginRight="10dp"
                     android:text="Добавить"
                     android:textColor="#606060"
                     android:textStyle="bold" />
             </FrameLayout>
 
-
-            <ImageView
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_alignParentTop="true"
+            <FrameLayout
+                android:id="@+id/layoutDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTwo"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="394dp"
-                android:layout_marginRight="150dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="135dp"
                 android:layout_marginBottom="15dp"
-                android:src="@drawable/ic_favorite_border_black_24dp" />
+                android:background="@drawable/round_white"
+                android:padding="5dp">
 
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
+
+                <TextView
+                    android:id="@+id/publish"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="27dp"
+                    android:layout_marginRight="10dp"
+                    android:text="19"
+                    android:textColor="#606060" />
+            </FrameLayout>
             <FrameLayout
                 android:id="@+id/social"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_below="@+id/nameTwo"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="394dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="200dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/round_white"
@@ -153,51 +184,22 @@
                     android:textColor="#606060" />
             </FrameLayout>
 
-            <FrameLayout
-                android:id="@+id/like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="394dp"
-                android:layout_marginRight="120dp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/round_white"
-                android:padding="5dp">
-
-                <ImageView
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/ic_favorite_border_black_24dp" />
-
-                <TextView
-                    android:id="@+id/likeCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="27dp"
-                    android:layout_marginRight="10dp"
-                    android:text="19"
-                    android:textColor="#606060" />
-            </FrameLayout>
-
 
             <FrameLayout
                 android:id="@+id/counter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/asanaRu"
+                android:layout_below="@+id/nameTwo"
                 android:layout_alignParentLeft="true"
+                android:layout_marginTop="30dp"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="384dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/round_white"
                 android:padding="5dp">
 
 
                 <TextView
-                    android:id="@+id/publish"
+                    android:id="@+id/counterFirst"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="27dp"
@@ -226,39 +228,39 @@
                 android:id="@+id/DescFirst"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_alignTop="@+id/asanaRu"
+                android:layout_below="@+id/image"
                 android:layout_marginLeft="16dp"
-                android:layout_marginTop="310dp"
-                android:fontFamily="sans-serif-light"
+                android:layout_marginTop="5dp"
                 android:text="titleBottom"
+                android:fontFamily="sans-serif-light"
                 android:textColor="@color/colorTextTitle"
                 android:textSize="17sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
             <TextView
                 android:id="@+id/nameTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/asanaRu"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="335dp"
+                android:layout_below="@+id/DescFirst"
                 android:layout_marginRight="10dp"
-                 />
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:text="descTwo" />
 
             <ImageView
                 android:id="@+id/buttonSettings"
+                android:src="@drawable/ic_more_horiz_black_24dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/ic_more_horiz_black_24dp" />
+                android:layout_marginTop="10dp"
+                 />
 
 
         </RelativeLayout>
 
 
-    </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
             </FrameLayout>

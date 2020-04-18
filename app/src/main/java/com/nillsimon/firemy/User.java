@@ -9,17 +9,18 @@ public class User {
     String text_name;
     String text_job;
     String descText;
+    String nameTwo;
     String DescFirst;
     int age;
 
     public User() {
     }
 
-    public User(String image, String text_name, String text_job, String DescFirst, String descText, int age) {
+    public User(String image, String text_name, String text_job, String nameTwo, String descText, int age) {
         this.image = image;
-        this.text_name = text_name;
+        this.nameTwo = nameTwo;
         this.text_job = text_job;
-        this.DescFirst = DescFirst;
+        this.nameTwo = nameTwo;
         this.descText = descText;
         this.age = age;
     }
@@ -30,7 +31,7 @@ public class User {
         HashMap<String , Object> result = new HashMap<>();
         result.put("image", image);
         result.put("text_name", text_name);
-        result.put("DescFirst", DescFirst);
+        result.put("nameTwo", nameTwo);
         result.put("descText", descText);
         result.put("text_job", text_job);
         result.put("age", age);

@@ -36,10 +36,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
         UserModel user = list.get(position);
 
-        holder.text_name.setText(user.firstName + " " + user.lastName);
+        holder.text_name.setText(user.firstName);
+        holder.nameTwo.setText(user.nameTwo + " " + user.nameTwo);
         holder.age.setText(user.age + "");
         holder.text_job.setText(user.job);
-        holder.descText.setText(user.descText);
+        holder.nameTwo.setText(user.nameTwo);
         holder.DescFirst.setText(user.DescFirst);
         Picasso.get().load(list.get(position).getImage()).into((holder.image));
         Picasso.get().load(list.get(position).getImage()).into((holder.yogaIconGrand));
@@ -65,7 +66,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     class UserViewHolder extends RecyclerView.ViewHolder{
 
-        TextView  text_name, text_job, descText, DescFirst, age, key;
+        TextView  text_name, text_job, nameTwo, DescFirst, age, key;
         ImageView image, yogaIconGrand;
 
         public UserViewHolder(@NonNull View itemView) {
@@ -76,7 +77,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             text_name = itemView.findViewById(R.id.asanaRu);
             text_job = itemView.findViewById(R.id.asanaEn);
             DescFirst = itemView.findViewById(R.id.DescFirst);
-            descText = itemView.findViewById(R.id.descTwo);
+            nameTwo = itemView.findViewById(R.id.nameTwo);
             age = itemView.findViewById(R.id.publish);
         }
     }
